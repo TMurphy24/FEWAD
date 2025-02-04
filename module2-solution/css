@@ -15,9 +15,7 @@ p {
 }
 
 h1 {
-    color: black;
-    font-size: 35px;
-    text-align: center;     
+    color: black;   
 }
 
 /*
@@ -120,6 +118,11 @@ moblie view width equal to or less than 767px
     padding-right: 12px;  
   }
 
+  h1 {
+    font-size: 35px;
+    text-align: center;
+}
+
 
 }
 
@@ -164,6 +167,21 @@ moblie view width equal to or less than 767px
     margin: 10px;
   }
 
+  .MoblieText span{
+    display:none;
+  }
+
+  .MoblieText:after {
+    content: "Categories";
+  }
+
+  h1 {
+    color: black;
+    font-size: 20px;
+    text-align: left;  
+    font-family: 'Franklin Gothic Medium';       
+}
+
 }
 
 
@@ -205,6 +223,11 @@ moblie view width equal to or less than 767px
     margin: 10px;  
     padding-right: 12px;
   }
+
+  h1 {
+    font-size: 35px;
+    text-align: center;     
+}
 
 }
 
