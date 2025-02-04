@@ -18,41 +18,10 @@ h1 {
     color: black;   
 }
 
-/*
-h3 {
-  
-  top: 0;
-  right: 0;
-  position: absolute; 
-  margin: 10px;  
-}
-*/
 
 body {
   font-family: sans-serif;
 }
-
-/*
-.foodbox {
-  width: 400px;
-  height: 200px;
-  position: relative; 
-  padding-top: 40px;
-  padding-left: 20px;
-  background-color: rgb(162, 168, 167);
-  border: 2px solid black;
-  margin: 40px;
-}
-
-.titlebox {
-  top: 0;
-  right: 0;
-  position: absolute;
-  width: 90px;
-  height: 40px; 
-  border: 1px solid black; 
-}
-*/
 
 /************    Responsive      **************/
 
@@ -73,30 +42,35 @@ moblie view width equal to or less than 767px
 
    .col-md-1, .col-md-2 {
     float: left;
-    border: 1px solid black;
+    height: 150px;
+    border: 2px solid black;
+    text-overflow: ellipsis; 
+    overflow: hidden;
+    white-space: wrap;
+    display: block;
   }
 
-   .col-md-1 {
+  .col-md-1 {
     width: 39%;
-    height: 150px;
     position: relative; 
     padding-top: 40px;
-    padding-left: 10px;
-    
-    border: 2px solid black;
+    padding-left: 20px;
     margin: 40px;
-    overflow: scroll;
   }
 
   .col-md-2 {
     width: 88%;
-    height: 150px;
     position: relative; 
     padding-top: 40px;
     padding-left: 20px;
-    
-    border: 2px solid black;
     margin: 40px;
+  }
+
+   .col-md-1:hover {
+    overflow: scroll;
+  }
+
+  .col-md-2:hover {  
     overflow: scroll;
   }
 
@@ -121,7 +95,11 @@ moblie view width equal to or less than 767px
   h1 {
     font-size: 35px;
     text-align: center;
-}
+  }
+
+  p {
+  text-align: left;
+  }
 
 
 }
@@ -131,22 +109,23 @@ moblie view width equal to or less than 767px
 
 @media  (max-width: 767px){
 
-  
-
    .col-md-11 {
     float: left;
-    border: 1px solid black;
-  }
-
-   .col-md-11 {
     width: 91.66%;
     height: 150px;
     position: relative; 
     padding-top: 40px;
-    padding-left: 20px;
-   
+    padding-left: 10px;
     border: 2px solid black;
     margin: 40px;
+    text-overflow: ellipsis; 
+    text-overflow: ellipsis; 
+    overflow: hidden;
+    white-space: wrap;
+    display: block;
+  }
+
+   .col-md-11:hover {   
     overflow: scroll;
 
   }
@@ -158,6 +137,30 @@ moblie view width equal to or less than 767px
     width: 100%;
     height: 40px; 
     border: 1px solid black; 
+  }
+
+  .TenSushiBox span{
+    display:none;
+  }
+
+  .TenBeefBox span{
+    display:none;
+  }
+
+  .TenChkBox span{
+    display:none;
+  }
+
+  .TenChkBox:after {
+    content: "This spicy chicken roots for the Buffalo Bills, Go Bills!";
+  }
+
+  .TenBeefBox:after {
+    content: "Beef this good comes in many forms; patties, balls, piles.";
+  }
+
+  .TenSushiBox:after {
+    content: "Sushi is good but expensive so choose wisely, maybe rolls?";
   }
 
   h3 {
@@ -178,9 +181,15 @@ moblie view width equal to or less than 767px
   h1 {
     color: black;
     font-size: 20px;
-    text-align: left;  
+    text-align: left;
+    padding-left: 40px;  
     font-family: 'Franklin Gothic Medium';       
-}
+  }
+
+  p {
+  text-align: center;
+  font-size: 20px;
+  }
 
 }
 
@@ -190,20 +199,23 @@ moblie view width equal to or less than 767px
 @media  (min-width: 992px){
 
     .col-lg-4 {
-    float: left;
-    border: 1px solid black;
+      float: left;
+      height: 150px;
+      width: 25%;
+      position: relative; 
+      padding-top: 40px;
+      padding-left: 20px;
+      border: 2px solid black;
+      margin: 40px;
+      text-overflow: ellipsis; 
+      overflow: hidden;
+      white-space: wrap;
+      display: block;
   }
 
-   .col-lg-4 {
-    width: 25%;
-    height: 150px;
-    position: relative; 
-    padding-top: 40px;
-    padding-left: 20px;
-    
-    border: 2px solid black;
-    margin: 40px;
+   .col-lg-4:hover {
     overflow: scroll;
+    
   }
 
   .titlebox {
@@ -216,7 +228,6 @@ moblie view width equal to or less than 767px
   }
 
   h3 {
-  
     top: 0;
     right: 0;
     position: absolute; 
@@ -227,6 +238,10 @@ moblie view width equal to or less than 767px
   h1 {
     font-size: 35px;
     text-align: center;     
+}
+
+  p {
+  text-align: left;
 }
 
 }
