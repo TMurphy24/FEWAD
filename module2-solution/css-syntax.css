@@ -204,9 +204,9 @@ moblie view width equal to or less than 767px
       width: 27%;
       position: relative; 
       padding-top: 40px;
-      padding-left: 40px;
+      padding-left: 20px;
       border: 2px solid black;
-      margin: 20px;
+      margin: 30px;
       text-overflow: ellipsis; 
       overflow: hidden;
       white-space: wrap;
