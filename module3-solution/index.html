@@ -1,3 +1,98 @@
 <!DOCTYPE html>
-<body></body>
+<html>
+
+<head>
+    <link rel="stylesheet" href="css-syntax-3.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <title>Module 3</title>
+</head>
+
+<body>
+
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+     <!-- https://getbootstrap.com/docs/3.3/components/#navbar -->
+     <!-- https://www.w3schools.com/bootstrap4/bootstrap_navbar.asp -->
+
+    <nav id="header-nav" class="navbar navbar-default">
+        <a class="navbar-brand" style="color: snow;">Food, LLC</a>
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Chicken</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Beef</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Sushi</a>
+              </li>
+            </ul>
+          </div>
+    </nav>
+
+    <h1 class="text-center">Our Menu</h1>
+
+    <!-- https://getbootstrap.com/docs/4.0/layout/grid/ -->
+
+     <!-- https://getbootstrap.com/docs/3.3/css/#type-alignment -->
+
+      <!-- https://getbootstrap.com/docs/5.0/examples/grid/#containers -->
+   
+
+    <div class="col-xs-12 col-sm-6 col-md-4">
+        <h3 lass="text-center">Chicken</h3>
+        <p>chicken barbacue buffalo chipotle szechuan gochujang adobo green-chili jalapeno
+        chicken barbacue buffalo chipotle szechuan gochujang adobo green-chili jalapeno
+        chicken barbacue buffalo chipotle szechuan gochujang adobo green-chili jalapeno
+        chicken barbacue buffalo chipotle szechuan gochujang adobo green-chili jalapeno
+        chicken barbacue buffalo chipotle szechuan gochujang adobo green-chili jalapeno </p>
+    </div>
+
+    <div class="col-xs-12 col-sm-6 col-md-4">
+        <h3 lass="text-center">Beef</h3>
+        <p>Beef chili barbacue braised slow cooked grilled smoked stick ground shredded
+            Beef chili barbacue braised slow cooked grilled smoked stick ground shredded
+            Beef chili barbacue braised slow cooked grilled smoked stick ground shredded
+            Beef chili barbacue braised slow cooked grilled smoked stick ground shredded
+            Beef chili barbacue braised slow cooked grilled smoked stick ground shredded
+            Beef chili barbacue braised slow cooked grilled smoked stick ground shredded</p>
+    </div>
+    
+    <div class="col-xs-12 col-sm-12 col-md-4">
+        <h3 lass="text-center">Sushi</h3>
+        <p>Sushi roll bowl burrito salad spicy fried nori rice paper Sushi roll bowl burrito
+            Sushi roll bowl burrito salad spicy fried nori rice paper Sushi roll bowl burrito
+            Sushi roll bowl burrito salad spicy fried nori rice paper Sushi roll bowl burrito
+            Sushi roll bowl burrito salad spicy fried nori rice paper Sushi roll bowl burrito
+            Sushi roll bowl burrito salad spicy fried nori rice paper Sushi roll bowl burrito</p>
+    </div>
+
+    <script>
+      // Get the button:
+  let mybutton = document.getElementById("myBtn");
+  
+  // When the user scrolls down 20px from the top of the document, show the button
+  window.onscroll = function() {scrollFunction()};
+  
+  function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      mybutton.style.display = "block";
+    } else {
+      mybutton.style.display = "none";
+    }
+  }
+  
+  // When the user clicks on the button, scroll to the top of the document
+  function topFunction() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+  }
+  </script> 
+
+    
+</body>
 </html>
