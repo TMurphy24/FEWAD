@@ -67,5 +67,23 @@ WARNING!!! WARNING!!!
         helloSpeaker.speak(names[i]);
       }
     }
+
+    //Use the map function to create an array based on the names array
+    //Array will contain the greetings based on name
+    //Function passed into map function as a value 
+    //NOT INLINE FUNCTION, ITS OWN FUNCTION
+    function Part2 (names){
+    
+      var firstLetter = names.charAt(0);
+
+      if (firstLetter === 'J') {
+        byeSpeaker.simpleSpeak(names);
+      } else {
+        helloSpeaker.simpleSpeak(names);
+      }
+    }
+
+    const list2 = names.map(Part2);
+    console.log(list2)
     
     })();
