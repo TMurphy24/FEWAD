@@ -11,6 +11,10 @@ var byeSpeaker = {};
 
   var speakWord = "Good Bye";
 
+  byeSpeaker.simpleSpeak = function(name){
+    return speakWord + " " + name;
+
+}
   
   byeSpeaker.speak = function(name){
   console.log(speakWord + " " + name);
