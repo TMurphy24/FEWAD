@@ -9,6 +9,10 @@ var helloSpeaker = {};
 
 var speakWord = "Hello";
 
+helloSpeaker.simpleSpeak = function(name){
+  return speakWord + " " + name;
+}
+
 helloSpeaker.speak = function(name){
   console.log(speakWord + " " + name);
 }
