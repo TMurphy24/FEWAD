@@ -102,14 +102,14 @@ function buildAndShowHomeHTML (categories) {
   $ajaxUtils.sendGetRequest(
     homeHtmlUrl,
     function (homeHtml) {
-      chooseRandomCategory(categories);
+      var category = chooseRandomCategory(categories);
 
       // TODO: STEP 2: Here, call chooseRandomCategory, passing it retrieved 'categories'
       // Pay attention to what type of data that function returns vs what the chosenCategoryShortName
       // variable's name implies it expects.
       //returns a random element within the category array - object
       //chosen wants a 'nickname' for the category? - the element number?
-       var chosenCategoryShortName = ;
+       var chosenCategoryShortName = category.short_name;
 
 
       // TODO: STEP 3: Substitute {{randomCategoryShortName}} in the home html snippet with the
@@ -118,7 +118,7 @@ function buildAndShowHomeHTML (categories) {
       randomCategoryShortName = 
         insertProperty(randomCategoryShortName,
                         "Short Name",
-                        categories.short_name);
+                        category.short_name);
 
       // WARNING! You are inserting something that will have to result in a valid Javascript
       // syntax because the substitution of {{randomCategoryShortName}} becomes an argument
