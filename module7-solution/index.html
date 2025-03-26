@@ -44,10 +44,10 @@
     <div class="col-md-6" ng-controller="AlreadyBoughtController">
      <h2>Already Bought:</h2>
      <ul>
-      <li ng-repeat="item in bought"> Bought {{item.quantity}} {{item.name}} </li>
+      <li ng-repeat="(item, total_price) in bought"> Bought {{total_price.quantity}} {{total_price.name}} for total: {{item | currency}}</li>
      </ul>
-     <!--Message should only show on emtpy array-->
-     <div ng-if="Object.keys(bought).length != 0" class="emptyMessage">Nothing bought yet.</div>
+     <!--Message should only show on emtpy array...still not working???-->
+     <div ng-if="Object.keys(bought).length === 0" class="emptyMessage">Nothing bought yet.</div>
     </div>
   </div>
 </div>

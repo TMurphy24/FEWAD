@@ -87,7 +87,7 @@
                 
                 
               }
-              console.log(findPriceTotal(item))
+              console.log(findPriceTotal(item))//price check - not working?
             }; 
             }
         };
@@ -95,7 +95,7 @@
     });
     //filter for custom dollar amounts
     // myMod.filter('myBill', function(){
-    //display total_price
+    //display total_price in $$$
     // }); 
 
 })();
