@@ -21,9 +21,6 @@
       }
       button > span {
         color: green;
-    
-
-
       }
     </style>
   </head>
@@ -36,23 +33,21 @@
     <!-- To Buy List -->
     <div class="col-md-6" ng-controller="ToBuyController">
      <h2>To Buy:</h2>
-     <!--https://github.com/jhu-ep-coursera/fullstack-course5/blob/master/examples/Lecture12/index.html-->
      <ul>
        <li ng-repeat="item in buy" ng-if="buy[item].quantity != 0"> Buy {{item.quantity}} {{item.name}} <button ng-click="buyfood(item.name)" class="btn btn-default"><span class="glyphicon glyphicon-ok"></span> Bought</button></li>
       </ul>
-     <!--Message should only show on emtpy array-->
-     <div ng-if="buy.length === 0" class="emptyMessage">Everything is bought!</div>
+     <!--Message should only show on emtpy object-->
+     <div ng-if="Object.keys(buy).length === 0" class="emptyMessage">Everything is bought!</div>
     </div>
     
     <!-- Already Bought List -->
     <div class="col-md-6" ng-controller="AlreadyBoughtController">
      <h2>Already Bought:</h2>
      <ul>
-      <li ng-repeat="item in bought" ng-if="bought[item].quantity != 0"> Bought {{item.quantity}} {{item.name}} </li>
-     
-       <li>O items</li>
+      <li ng-repeat="item in bought"> Bought {{item.quantity}} {{item.name}} </li>
      </ul>
-     <div ng-if="bought.length === 0" class="emptyMessage">Nothing bought yet.</div>
+     <!--Message should only show on emtpy array-->
+     <div ng-if="Object.keys(bought).length != 0" class="emptyMessage">Nothing bought yet.</div>
     </div>
   </div>
 </div>
