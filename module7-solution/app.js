@@ -61,6 +61,7 @@
             console.log($scope.bought);
             }
             delete $scope.buy[food];
+            
           }
         console.log(food)
         };
@@ -71,22 +72,31 @@
       $scope.buy = ShoppingListCheckOffService.buy
       $scope.bought = ShoppingListCheckOffService.bought
 
+        //https://www.w3schools.com/angular/angular_filters.asp
+        //repepative, not needed twice - remove later
         $scope.buyfood = function(food) {
           if ($scope.buy[food]) {
               if (!$scope.bought[food]) {
                   $scope.bought[food] = angular.copy($scope.buy[food]);
                   console.log($scope.bought);
-              } 
-              delete $scope.buy[food];
-              
+              }
+          $scope.findPriceTotal = function(item) {
+              if ($scope.bought[item]) {
+                let total_price = $scope.bought[item];
+                return total_price.quantity * total_price.pricePerItem;
+                
+                
+              }
+              console.log(findPriceTotal(item))
+            }; 
             }
         };
         
     });
-    
-       myMod.value('greeting', function(name) {
-           alert("Hello, " + name);
-         });
+    //filter for custom dollar amounts
+    // myMod.filter('myBill', function(){
+    //display total_price
+    // }); 
 
 })();
 
