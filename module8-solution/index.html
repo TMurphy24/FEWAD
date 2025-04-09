@@ -25,7 +25,7 @@
   </style>
 
 <body ng-app="NarrowItDownApp">
-   <div class="container" ng-controller="NarrowItDownController">
+   <div class="container" class="col-md-6" ng-controller="NarrowItDownController">
     <h1>Narrow Down Your Chinese Menu Choice</h1>
 
     <div class="form-group">
@@ -35,11 +35,11 @@
       <button class="btn btn-primary" ng-click="getMatchedMenuItems(inputValue)">Narrow It Down For Me!</button>
     </div>
 
-    
+    <div class="col-md-6">
     <ul>
-      <li> {{item.name}} <button ng-click="()" class="btn btn-default"><span class="glyphicon glyphicon-ok"></span>Don’t want this one!</button></li>
+      <li> {{self.found}} <button ng-click="foundItems()" class="btn btn-default"><span class="glyphicon glyphicon-ok"></span>Don’t want this one!</button></li>
     </ul>
-  
+   </div>
 
     <found-items found-items="...." on-remove="...."></found-items>
   </div>
