@@ -37,7 +37,7 @@
 
     <div class="col-md-6">
     <ul>
-      <li> {{self.found}} <button ng-click="foundItems()" class="btn btn-default"><span class="glyphicon glyphicon-ok"></span>Don’t want this one!</button></li>
+      <li ng-repeat="item in found"> {{self.found}} <button ng-click="deleItem()" class="btn btn-default"><span></span>Don’t want this one!</button></li>
     </ul>
    </div>
 

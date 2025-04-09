@@ -38,7 +38,7 @@
 
     .controller('NarrowItDownController', function($scope, $injector, MenuSearchService) {
             $scope.getMatchedMenuItems = MenuSearchService.getMatchedMenuItems
-            .directive('foundItems', deleItem);
+            //.directive('foundItems', deleItem);
 
             function deleItem() {
                 if ($scope.found[menuItem]) {
