@@ -38,13 +38,16 @@
 
     .controller('NarrowItDownController', function($scope, $injector, MenuSearchService) {
             $scope.getMatchedMenuItems = MenuSearchService.getMatchedMenuItems
-            foundItems
-            
-            //foundItems directive
+            .directive('foundItems', deleItem);
 
+            function deleItem() {
+                if ($scope.found[menuItem]) {
+                    delete $scope.found[menuItem];
+                }
+              };
+           
         console.log('Narrow it Down')
       })
-
 
 })();
 
