@@ -28,8 +28,8 @@
                     }   
                 }  
                 
-            console.log('response.data: ', response.data);
-            console.log(searchTerm);
+            //console.log('response.data: ', response.data);
+            //console.log(searchTerm);
             console.log(self.found)
 
           });
