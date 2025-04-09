@@ -18,7 +18,9 @@
     <div class="form-group narrow-button" >
       <button class="btn btn-primary" ng-click="getMatchedMenuItems(inputValue)">Narrow It Down For Me!</button>
     </div>
-
+    <ul>
+      <li ng-model="found"> Menu Items: {{self.found}}</li>
+      </ul>
     <found-items found-items="...." on-remove="...."></found-items>
   </div>
 

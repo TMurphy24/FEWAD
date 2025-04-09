@@ -13,7 +13,7 @@
         $http.get("https://coursera-jhu-default-rtdb.firebaseio.com/menu_items.json")
             .then(function(response) {
                 for (categoryKey in response.data){//everything
-                    console.log(categoryKey)
+                    console.log(categoryKey)//check
                     for (itemIndex in response.data[categoryKey]["menu_items"]){//just menu items under categorykey
                         var menuItem = response.data[categoryKey]["menu_items"][itemIndex]
                         var desc = menuItem["description"]
@@ -27,26 +27,21 @@
                     }   
                 }  
                 
-                    
-                //found array
-                //perform if-
-                //includes (searchitem)
             console.log('response.data: ', response.data);
             console.log(searchTerm);
             console.log(self.found)
 
-         // $scope.myWelcome = 'Your IP is ' + response.data['origin'] + ', we welcome you here!';
-        // var categoryKey = 'FR';
-         //$scope.myCategory = 'Your category name is ' + response.data[categoryKey]['category']['name'] + ', and is one of many category types!';
-            //$scope.myFirtMenuItem = 'Your first menu item is ' + response.data[categoryKey]['menu_items'][0]['name'] + ', and is one of many items!';
-        
-    });
-     };  
+          });
+        };  
       })
 
-      
     .controller('NarrowItDownController', function($scope, $injector, MenuSearchService) {
             $scope.getMatchedMenuItems = MenuSearchService.getMatchedMenuItems
+            foundItems 
+            self.found = []
+            self.found.push(menuItem)
+            
+            //foundItems directive
 
         console.log('Narrow it Down')
       })
