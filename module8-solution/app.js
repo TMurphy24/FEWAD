@@ -1,6 +1,7 @@
 //IFFY
 //https://ychaikin.github.io/jhu-ajax-course/Module8
 //https://coursera-jhu-default-rtdb.firebaseio.com/menu_items.json
+//https://github.com/jhu-ep-coursera/fullstack-course5/blob/master/examples/Lecture30/app.js
 (function(){
     var myMod = angular.module('NarrowItDownApp', [])
     
@@ -37,9 +38,7 @@
 
     .controller('NarrowItDownController', function($scope, $injector, MenuSearchService) {
             $scope.getMatchedMenuItems = MenuSearchService.getMatchedMenuItems
-            foundItems 
-            self.found = []
-            self.found.push(menuItem)
+            foundItems
             
             //foundItems directive
 

@@ -8,6 +8,22 @@
     <link rel="stylesheet" href="styles/bootstrap.min.css">
     <link rel="stylesheet" href="styles/styles.css">
   </head>
+
+  <style>
+    .emptyMessage {
+        font-weight: bold;
+        color: red;
+        font-size: 1.2em;
+      }
+    li {
+        margin-bottom: 7px;
+        font-size: 1.2em;
+      }
+      li > button {
+        margin-left: 6px;
+      }
+  </style>
+
 <body ng-app="NarrowItDownApp">
    <div class="container" ng-controller="NarrowItDownController">
     <h1>Narrow Down Your Chinese Menu Choice</h1>
@@ -15,12 +31,16 @@
     <div class="form-group">
       <input type="text" placeholder="search term" class="form-control" ng-model="inputValue">
     </div>
-    <div class="form-group narrow-button" >
+    <div class="form-group narrow-button"  ng-controller="NarrowItDownController">
       <button class="btn btn-primary" ng-click="getMatchedMenuItems(inputValue)">Narrow It Down For Me!</button>
     </div>
+
+    
     <ul>
-      <li ng-model="found"> Menu Items: {{self.found}}</li>
-      </ul>
+      <li> {{item.name}} <button ng-click="()" class="btn btn-default"><span class="glyphicon glyphicon-ok"></span>Don’t want this one!</button></li>
+    </ul>
+  
+
     <found-items found-items="...." on-remove="...."></found-items>
   </div>
 
