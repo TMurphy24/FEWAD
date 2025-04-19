@@ -19,7 +19,7 @@ ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #333;
+  background-color: rgb(91, 81, 179);
 }
 
 li {
@@ -36,18 +36,20 @@ li a {
 
 /* Change the link color to #111 (black) on hover */
 li a:hover {
-  background-color: #111;
+  background-color: rgb(55, 110, 137);
 }
 </style>
 </head>
 
 <body>
-  <h1>Welcome to the Restaurant</h1>
+  
   <ul>
     <li><a href="active">Home</a></li>
-    <li><a href="#news">Categories</a></li>
+    <li><a href="#category">Menu Categories</a></li>
     <li><a href="#contact">Items</a></li>
   </ul>
+  <h1 style="text-align: center;">Welcome to the Restaurant</h1>
+
   <ui-view></ui-view>
 </body>
 
