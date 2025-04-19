@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!--Lecture 33 Part 2-->
+<!--https://ychaikin.github.io/jhu-ajax-course/Module9-->
+<html ng-app="MenuApp">
+
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.28/angular-ui-router.min.js"></script>
+  <script src="angular.min.js"></script> 
+  <script src="categories.component.js"></script>
+  <script src="data.module.js"></script>
+  <script src="items.component.js"></script>
+  <script src="menuapp.module.js"></script>
+  <script src="menudata.service.js"></script> 
+  <script src="routes.js"></script>
+
+<style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+  background-color: #111;
+}
+</style>
+</head>
+
+<body>
+  <h1>Welcome to the Restaurant</h1>
+  <ul>
+    <li><a href="active">Home</a></li>
+    <li><a href="#news">Categories</a></li>
+    <li><a href="#contact">Items</a></li>
+  </ul>
+  <ui-view></ui-view>
+</body>
+
+</html>
