@@ -11,6 +11,9 @@
                     .then(response => response.data);
       };
     //Point 5
-    getItemsForCategory(categoryShortName)
+    function getItemsForCategory(categoryShortName){ 
+      return $http.get("https://coursera-jhu-default-rtdb.firebaseio.com/menu_items/{categoryShortName}.json")
+                    .then(response => response.data);
+      };
     }
   })(); 
