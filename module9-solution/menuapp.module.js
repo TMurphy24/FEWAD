@@ -11,12 +11,12 @@
                     });
       };
     })
-    .controller('CategoriesController', function($scope, MenuDataService) {
-      var items = MenuDataService.getAllCategories();
-      console.log('items: ', items);
-      console.log('items[0]: ', items[0]);
-      $scope.items = items;
-    });
+    // .controller('CategoriesController', function($scope, MenuDataService) {
+    //   var items = MenuDataService.getAllCategories();
+    //   console.log('items: ', items);
+    //   console.log('items[0]: ', items[0]);
+    //   $scope.items = items;
+    // });
 
     // MenuDataService.$inject = ['$http'];
     
