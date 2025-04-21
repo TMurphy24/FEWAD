@@ -12,7 +12,7 @@
 (function () {
     'use strict';
     
-    angular.module('data')
+    angular.module('data',['ui.router'])
     .component('myCategories', {
       templateUrl: 'index.html',
       //controller:

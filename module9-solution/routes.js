@@ -8,6 +8,7 @@
     function RoutesConfig($stateProvider, $urlRouterProvider) {
       $urlRouterProvider.otherwise('/');
   
+      //https://github.com/jhu-ep-coursera/fullstack-course5/blob/master/examples/Lecture36/src/app.js
       $stateProvider
         .state('home', {
           url: '/',
@@ -22,7 +23,14 @@
             //     return MenuDataService.getAllCategories();
             //   }]
             // }
+          })
+          
+          .state('items', {
+            url: '/',
+            template: '<h1>Welcome to our Restaurant</h1><a ui-sref="categories">Go to Categories</a>'
           });
+
+          
     }
   })();
   //Part 9
