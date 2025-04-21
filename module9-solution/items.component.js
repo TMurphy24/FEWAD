@@ -9,3 +9,16 @@
 
 
 //Part 37 - items example
+(function () {
+    'use strict';
+    
+    angular.module('data')
+    .component('myCategories', {
+      templateUrl: 'index.html',
+      //controller:
+      bindings: {
+      items: '<'
+      }
+    });
+    
+    })();
