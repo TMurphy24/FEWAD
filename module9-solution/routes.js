@@ -6,6 +6,7 @@
   
     RoutesConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
     function RoutesConfig($stateProvider, $urlRouterProvider) {
+      // Redirect to home page if no other URL matches
       $urlRouterProvider.otherwise('/');
   
       //https://github.com/jhu-ep-coursera/fullstack-course5/blob/master/examples/Lecture36/src/app.js
