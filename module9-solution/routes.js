@@ -18,9 +18,11 @@
           template: '<h1>Welcome to my little Restaurant</h1>'
         })
 
+        //Part 37 Part 2 - 3:20
         .state('categories', {
             url: '/categories',
-            template: '<h1>Welcome to my baby Restaurant</h1>'
+            template: '<ul><li ng-repeat="item in $ctrl.items"> {{item.quantity}} of {{item.name}} </li></ul>',
+            controller: ''
             
           })
           

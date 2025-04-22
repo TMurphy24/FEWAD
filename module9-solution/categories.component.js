@@ -1,24 +1,26 @@
-/* <h2>Categories</h2>
-<ul ng-controller="CategoriesController">
-  <li ng-repeat="cat in items">
-    <a ui-sref="items({categoryShortName: cat.short_name})">{{ cat.name }}</a>
-  </li>
-</ul> */
-//Part 6
 //create component called categories that shows all available
 //categories in the menu to the user
+//pART 6
+//Part 37
 
 (function () {
   'use strict';
   
-  angular.module('data',['ui.router'])
-  .component('myCategories', {
-    templateUrl: 'index.html',
-    //controller:
-    bindings: {
-    categories: '<'
-    }
-  });
+  angular.module('data')
+  .controller('categories',);
+  
+  
+  CategoriesController.$inject = ['data'];
+  function CategoriesController(ShoppingListService) {
+    var mainList = this;
+    mainList.items = [];
+  
+    mainList.$onInit = function () {
+      ShoppingListService.getItems()
+      .then(function (result) {
+        mainList.items = result;
+      });
+    };
+  }
   
   })();
-  //Example 37 
