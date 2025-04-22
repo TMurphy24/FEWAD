@@ -1,5 +1,7 @@
 (function () {
     'use strict';
+
+    angular.module('MenuApp',['ui.router']);
   
     angular.module('MenuApp')
       .config(RoutesConfig);
@@ -9,28 +11,23 @@
       // Redirect to home page if no other URL matches - failsafe
       $urlRouterProvider.otherwise('/');
   
-      //Set up UI states
+      //Set up UI states - 36 Part 2
       $stateProvider
         .state('home', {
           url: '/home',
-          template: '<h1>Welcome to our Restaurant</h1><a ui-sref="categories">Go to Categories</a>'
+          template: '<h1>Welcome to my little Restaurant</h1>'
         })
+
         .state('categories', {
             url: '/categories',
-            templateUrl: 'categories.template.html',
-            // controller: 'CategoriesController as catCtrl',
-            // resolve: {
-            //   items: ['MenuDataService', function(MenuDataService) {
-            //     return MenuDataService.getAllCategories();
-            //   }]
-            // }
+            template: '<h1>Welcome to my baby Restaurant</h1>'
+            
           })
           
-          .state('items', {
-            url: '/',
-            template: '<h1>Welcome to our Restaurant</h1><a ui-sref="categories">Go to Categories</a>'
+          .state('tab2', {
+            url: '/tab2',
+            template: '<h1>Welcome to other Restaurant</h1>'
           });
-
           
     }
   })();

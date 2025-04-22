@@ -4,55 +4,41 @@
 <html ng-app="MenuApp">
 
 <head>
-  
-  <script src="categories.component.js"></script>
+  <script src="angular.min.js"></script> 
+  <script src="angular-ui-router.min.js"></script>
+  <!-- <script src="categories.component.js"></script>
   <script src="data.module.js"></script>
   <script src="items.component.js"></script>
   <script src="menuapp.module.js"></script>
-  <script src="menudata.service.js"></script> 
+  <script src="menudata.service.js"></script>  -->
   <script src="routes.js"></script>
 
 <style>
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: rgb(91, 81, 179);
+.activeTab {
+  font-weight: bold;
+  color: darkgoldenrod;
 }
 
-li {
-  float: left;
-}
 
-li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-/* Change the link color to #111 (black) on hover */
-li a:hover {
-  background-color: rgb(55, 110, 137);
-}
 </style>
 </head>
 
 <body>
   
   <h1 style="text-align: center;">Welcome to the Restaurant</h1>
-
+  <div class="tabs">
+    
+    <a ui-sref="categories" ui-sref-active="activeTab">Categories</a>
+    <a ui-sref="tab2" ui-sref-active="activeTab">Tab 2</a>
+    <a ui-sref="home" ui-sref-active="activeTab">Home</a>
+  </div>
 
 
  <!--interchangeable view-->
   <ui-view></ui-view>
 
 
-  <script src="angular.min.js"></script> 
-  <script src="angular-ui-router.min.js"></script>
-
+  
 </body>
 
 </html>
