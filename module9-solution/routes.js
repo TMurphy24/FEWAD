@@ -6,13 +6,13 @@
   
     RoutesConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
     function RoutesConfig($stateProvider, $urlRouterProvider) {
-      // Redirect to home page if no other URL matches
+      // Redirect to home page if no other URL matches - failsafe
       $urlRouterProvider.otherwise('/');
   
-      //https://github.com/jhu-ep-coursera/fullstack-course5/blob/master/examples/Lecture36/src/app.js
+      //Set up UI states
       $stateProvider
         .state('home', {
-          url: '/',
+          url: '/home',
           template: '<h1>Welcome to our Restaurant</h1><a ui-sref="categories">Go to Categories</a>'
         })
         .state('categories', {

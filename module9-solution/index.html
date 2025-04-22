@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<!--Lecture 33 Part 2-->
-<!--https://ychaikin.github.io/jhu-ajax-course/Module9-->
+<!--Lecture 36 Part 2-->
+<!--Ui-Router download explanation Lecture 36, Part 2-->
 <html ng-app="MenuApp">
 
 <head>
-  <script src="angular-ui-router.min.js"></script>
-  <script src="angular.min.js"></script> 
+  
   <script src="categories.component.js"></script>
   <script src="data.module.js"></script>
   <script src="items.component.js"></script>
@@ -43,14 +42,17 @@ li a:hover {
 
 <body>
   
-  <ul>
-    <li><a href="active">Home</a></li>
-    <li><a href="#category">Menu Categories</a></li>
-    <li><a href="#contact">Items</a></li>
-  </ul>
   <h1 style="text-align: center;">Welcome to the Restaurant</h1>
 
+
+
+ <!--interchangeable view-->
   <ui-view></ui-view>
+
+
+  <script src="angular.min.js"></script> 
+  <script src="angular-ui-router.min.js"></script>
+
 </body>
 
 </html>
