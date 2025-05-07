@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html ng-app="SimpleFormsApp">
+
+  <head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>David Chu's China Bistro</title>
+   
+    <script src="lib/angular.min.js"></script>
+    <script src="lib/angular-ui-router.min.js"></script>
+    <script src="app.js"></script>
+    <script src="src/common/menu.service.js"></script>
+    
+    <link href='https://fonts.googleapis.com/css?family=Oxygen:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/restaurant.css">
+    <link rel="stylesheet" href="css/common.css">
+    <title>Simple Form Validation</title>
+  </head>
+
+  <header>
+    <nav id="header-nav" class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="index.html" class="pull-left visible-md visible-lg">
+            <div id="logo-img" alt="Logo image"></div>
+          </a>
+
+          <div class="navbar-brand">
+            <a href="index.html"><h1>David Chu's China Bistro</h1></a>
+            <p>
+            <img src="images/star-k-logo.png" alt="Kosher certification">
+            <span>Kosher Certified</span>
+            </p>
+          </div>
+
+          <button id="navbarToggle" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapsable-nav" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+
+        <div id="collapsable-nav" class="collapse navbar-collapse">
+          <ul id="nav-list" class="nav navbar-nav navbar-right">
+            <li id="navHomeButton" class="visible-xs">
+              <a href="index.html">
+                <span class="glyphicon glyphicon-home"></span> Home</a>
+            </li>
+            <li id="navMenuButton" ui-sref-active="active">
+              <a ui-sref="public.menu">
+                <span class="glyphicon glyphicon-cutlery"></span><br class="hidden-xs"> Menu</a>
+            </li>
+            <li>
+              <a href="registered.html">
+                <span class="glyphicon glyphicon-info-sign"></span><br class="hidden-xs"> My Info</a>
+            </li>
+            <li>
+                <a href="sign_up.html">
+                <span class="glyphicon glyphicon-certificate"></span><br class="hidden-xs"> Sign Up</a>
+            </li>
+            <li id="phone" class="hidden-xs">
+              <a href="tel:410-602-5008">
+                <span>410-602-5008</span></a><div>* We Deliver</div>
+            </li>
+          </ul><!-- #nav-list -->
+        </div><!-- .collapse .navbar-collapse -->
+      </div><!-- .container -->
+    </nav><!-- #header-nav -->
+  </header> 
+
+<style>
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.ng-touched.ng-valid {
+    border: 2px green solid;
+}
+
+.ng-touched.ng-invalid {
+    border: 2px red solid;
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+  .cancelbtn, .signupbtn {
+     width: 100%;
+  }
+}
+</style>
+<body ng-controller="RegistrationController as reg">
+
+  <fieldset>
+  <form name="formName" ng-submit="submit()" novalidate>
+    <div class="container">
+      <h1 style="text-align: center;">Sign Up</h1>
+      <p>Please fill in this form to register.</p>
+      <hr>
+
+      <!-- Lecture 42 1&2 - Form Validation -->
+      <!-- validated through AngularJS validation -->
+      <!-- https://www.w3schools.com/angular/ng_ng-blur.asp -->
+
+      <input type="text" 
+      placeholder="First Name" 
+      ng-model="reg.user.firstName" 
+      name="fname" 
+      
+      ng-minlength="2"
+      ng-blur="save('q1', firstName)" required >
+      {{ reg.user.firstName }}
+      <span ng-if="(formName.fname.$error.minlength || formName.fname.$error.required) && formName.fname.$touched">
+        First Name must be at least 2 characters long</span>
+        <br>
+      
+
+      <input type="text" 
+      placeholder="Last Name"
+      name="lname" 
+      ng-model="reg.user.lastName" 
+      ng-minlength="2"
+      ng-blur="save('q2', lastName)" required >
+      {{ reg.user.lastName }}
+      <span ng-if="(formName.fname.$error.minlength || formName.fname.$error.required) && formName.fname.$touched">
+        Last Name must be at least 2 characters long</span>
+        <br>
+
+      
+      <input type="text" 
+      placeholder="Email"
+      name="email" 
+      ng-model="reg.user.myemail"  
+      required min-length="2"
+      ng-blur="save('q3', myemail)">
+      <span ng-if="formName.email.$invalid && formName.email.$touched">
+        Must be a valid email address: handle@domain format
+      </span>
+      <br>
+
+      
+      <input type="text" 
+      placeholder="Phone ###-###-####"
+      name="phone"
+      ng-model="reg.user.myphone"
+      ng-blur="save('q4', myphone)"
+      pattern="(\d{3})-(\d{3})-(\d{4})">
+      <span ng-if="regForm.phone.$invalid && regForm.phone.$touched">
+        Phone must be in the format ###-###-####.
+      </span>
+      <br>
+
+      <!-- The menu number is the short_name attribute of each menu item -->
+      <input type="text" 
+      placeholder="Menu Number"
+      name="fdish" 
+      ng-model="reg.user.favoriteDish"
+      ng-blur="save('q5', favoriteDish)"
+      required min-length="2">
+
+      <div class="clearfix">
+        <button type="button"
+        class="cancelbtn">Cancel</button>
+
+        <!-- Button should save profile and search for food item -->
+        <button type="submit" 
+        ng-click="reg.submit(); searchByFavoriteDish()" 
+        ng-disabled="formName.$invalid" 
+        class="signupbtn" >Submit</button>
+
+        <div style="margin-top: 10px;">
+          Form valid? {{ formName.$valid }}
+        </div>
+      </div>
+    </div>
+  </form>
+</fieldset>
+
+  <!-- Task 1 -->
+  <div id="info" ng-if="reg.completed">
+    Name: {{ reg.user.firstName}} {{ reg.user.lastName}}<br>
+    Email: {{ reg.user.myemail}} <br>
+    Phone: {{ reg.user.myphone }} <br>
+    <!-- Live check for food short_name -->
+    Favorite Dish: {{ reg.user.favoriteDish}} 
+  </div>
+
+  <!-- Live check for food short_name function-->
+  <div>
+    <ul>
+      <li ng-if="">
+        <!-- If not in search -->
+        <!-- Task 3 -->
+        <p>No such menu number exists</p>
+      </li>
+    </ul>
+  </div>
+
+</body>
+</html>

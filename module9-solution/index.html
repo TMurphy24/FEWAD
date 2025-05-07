@@ -6,12 +6,13 @@
 <head>
   <script src="angular.min.js"></script> 
   <script src="angular-ui-router.min.js"></script>
-  <!-- <script src="categories.component.js"></script>
-  <script src="data.module.js"></script>
+  <script src="categories.component.js"></script>
+  <script src="data.module.js"></script> 
   <script src="items.component.js"></script>
+  <script src="menudata.service.js"></script>
   <script src="menuapp.module.js"></script>
-  <script src="menudata.service.js"></script>  -->
   <script src="routes.js"></script>
+  
 
 <style>
 .activeTab {
@@ -26,10 +27,10 @@
 <body>
   
   <h1 style="text-align: center;">Welcome to the Restaurant</h1>
-  <div class="tabs">
+  <div class="items">
     
     <a ui-sref="categories" ui-sref-active="activeTab">Categories</a>
-    <a ui-sref="tab2" ui-sref-active="activeTab">Tab 2</a>
+    <a ui-sref="items" ui-sref-active="activeTab">Items</a>
     <a ui-sref="home" ui-sref-active="activeTab">Home</a>
   </div>
 

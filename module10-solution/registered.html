@@ -1,0 +1,113 @@
+<!-- It shows them their “registered” information, including
+the favorite menu item they picked. When showing the favorite
+menu item, display the picture of the menu item as well as
+its title and description -->
+<!DOCTYPE html>
+<html ng-app="SimpleFormsApp">
+
+  <head>
+   
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>David Chu's China Bistro</title>
+
+    <script src="lib/angular.min.js"></script>
+    <script src="lib/angular-ui-router.min.js"></script>
+    <script src="app.js"></script>
+    <script src="src/common/menu.service.js"></script>
+   
+
+    <link href='https://fonts.googleapis.com/css?family=Oxygen:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/restaurant.css">
+    <link rel="stylesheet" href="css/common.css">
+
+    <title>Simple Form Validation</title>
+  </head>
+
+  <header>
+    <nav id="header-nav" class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="index.html" class="pull-left visible-md visible-lg">
+            <div id="logo-img" alt="Logo image"></div>
+          </a>
+
+          <div class="navbar-brand">
+            <a href="index.html"><h1>David Chu's China Bistro</h1></a>
+            <p>
+            <img src="images/star-k-logo.png" alt="Kosher certification">
+            <span>Kosher Certified</span>
+            </p>
+          </div>
+
+          <button id="navbarToggle" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapsable-nav" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+
+        <div id="collapsable-nav" class="collapse navbar-collapse">
+          <ul id="nav-list" class="nav navbar-nav navbar-right">
+            <li id="navHomeButton" class="visible-xs">
+              <a href="index.html">
+                <span class="glyphicon glyphicon-home"></span> Home</a>
+            </li>
+            <li id="navMenuButton" ui-sref-active="active">
+              <a ui-sref="public.menu">
+                <span class="glyphicon glyphicon-cutlery"></span><br class="hidden-xs"> Menu</a>
+            </li>
+            <li>
+                <a href="registered.html">
+                <span class="glyphicon glyphicon-info-sign"></span><br class="hidden-xs"> My Info</a>
+            </li>
+            <li>
+                <a href="sign_up.html">
+                <span class="glyphicon glyphicon-certificate"></span><br class="hidden-xs"> Sign Up</a>
+            </li>
+            <li id="phone" class="hidden-xs">
+              <a href="tel:410-602-5008">
+                <span>410-602-5008</span></a><div>* We Deliver</div>
+            </li>
+          </ul><!-- #nav-list -->
+        </div><!-- .collapse .navbar-collapse -->
+      </div><!-- .container -->
+    </nav><!-- #header-nav -->
+  </header> 
+<body ng-strict-di>
+
+    <div >
+         <!-- Check for one element since all must be present -->
+          <!-- Task 2 -->
+        <div ng-if="!firstName"></div> 
+         <p>Not Signed Up Yet. Sign up Now!<a href="sign_up.html">Sign up Now!</a></p>
+    </div>
+   
+    <div ng-controller="DataMoverController">
+      <h1>Your Profile</h1>
+      <p>Your Name: {{ user.firstName }} {{ user.lastName }}</p>
+      <p>Email: {{ user.myemail }}</p>
+      <p>Phone: {{ user.myphone }}</p>
+
+      <!-- Food Search and Image Div -->
+      <!-- searchDishImages() -->
+        <div>
+          <p>Favorite Dish: {{ user.favoriteDish }}</p>
+          <!-- Fill In URL link -->
+          <img src="url" atl="">
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+
+
+<!-- If the user hasnt yet “registered” through the Sign Up button, simply display a message saying:
+Not Signed Up Yet. Sign up Now!. The words “Sign up Now!”
+should be a link to the same view as the Sign Up link points to. -->
