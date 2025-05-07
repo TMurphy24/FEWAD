@@ -1,3 +1,6 @@
+//https://docs.angularjs.org/guide/controller
+//https://www.w3schools.com/Angular/angular_controllers.asp
+
 
 (function () {
   'use strict';
@@ -15,13 +18,10 @@
   // ItemsController
   ItemsController.$inject = ['$scope', 'items'];
   function ItemsController($scope, items) {
-  //   var items = items['menu_items'];
-  //   $scope.items = items;
-  // }
-  var ctrl = this;
-
-  ctrl.items = items.menu_items;
-  ctrl.categoryName = items.category && items.category.name;
+    var ctrl = this;
+    //lost menu_items fix?
+    ctrl.items = items.menu_items;
+    ctrl.categoryName = items.category && items.category.name;
 }
 })();
 

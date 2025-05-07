@@ -28,13 +28,11 @@
                 return MenuDataService.getAllCategories();
               }]
              }
-            
           })
           
           .state('items', {
             //url: '/items',
             url: '/items/{categoryShortName}',
-            //template: '<h1>Welcome to other Restaurant{{ $ctrl.items }}</h1><><>',
             template: '<ul><li ng-repeat="item in ctrl.items"><a>{{ item.name }}</a></li></ul>',
             controller: 'ItemsController',
             controllerAs: 'ctrl',
@@ -43,11 +41,8 @@
                 return MenuDataService.getItemsForCategory($stateParams.categoryShortName);
               }]
             }
-
-
-          });
-          
-    }
-  })();
+          });  
+        }
+     })();
   //Part 9
  

@@ -11,7 +11,7 @@
                     .then(response => response.data);
       };
     //Part 5B
-     this.getItemsForCategory = function(categoryShortName){ //link issue
+     this.getItemsForCategory = function(categoryShortName){ //link issue - ctrl?
       return $http.get("https://coursera-jhu-default-rtdb.firebaseio.com/menu_items/" + categoryShortName + ".json")
                     .then(response => response.data);
                     

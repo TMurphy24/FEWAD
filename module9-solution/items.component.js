@@ -18,7 +18,7 @@
 function ItemsController() {
   var $ctrl = this;
 
-  $ctrl.$onInit = function () {
+    $ctrl.$onInit = function () {
     console.log('Menu items:', $ctrl.items);
   };
 }
