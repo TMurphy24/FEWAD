@@ -32,10 +32,12 @@
           })
           
           .state('items', {
-            url: '/items',
+            //url: '/items',
+            url: '/items/{categoryShortName}',
             //template: '<h1>Welcome to other Restaurant{{ $ctrl.items }}</h1><><>',
             template: '<ul><li ng-repeat="item in ctrl.items"><a>{{ item.name }}</a></li></ul>',
             controller: 'ItemsController',
+            controllerAs: 'ctrl',
             resolve: {
               items: ['MenuDataService', '$stateParams', function(MenuDataService, $stateParams) {
                 return MenuDataService.getItemsForCategory($stateParams.categoryShortName);
@@ -48,5 +50,4 @@
     }
   })();
   //Part 9
-  //These routes should be defined in the MenuApp module
-  
+ 
