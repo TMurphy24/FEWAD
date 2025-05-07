@@ -15,10 +15,14 @@
   // ItemsController
   ItemsController.$inject = ['$scope', 'items'];
   function ItemsController($scope, items) {
-    var items = category['menu_items'];
-    $scope.items = items;
-  }
+  //   var items = items['menu_items'];
+  //   $scope.items = items;
+  // }
+  var ctrl = this;
 
+  ctrl.items = items.menu_items;
+  ctrl.categoryName = items.category && items.category.name;
+}
 })();
 
 

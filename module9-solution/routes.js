@@ -34,11 +34,10 @@
           .state('items', {
             url: '/items',
             //template: '<h1>Welcome to other Restaurant{{ $ctrl.items }}</h1><><>',
-            template: '<ul><li ng-repeat="item in items"><a>{{ item.name }}</a></li></ul>',
+            template: '<ul><li ng-repeat="item in ctrl.items"><a>{{ item.name }}</a></li></ul>',
             controller: 'ItemsController',
-            //component: 'items', // component, not controller
             resolve: {
-              category: ['MenuDataService', '$stateParams', function(MenuDataService, $stateParams) {
+              items: ['MenuDataService', '$stateParams', function(MenuDataService, $stateParams) {
                 return MenuDataService.getItemsForCategory($stateParams.categoryShortName);
               }]
             }
